@@ -19,6 +19,7 @@ function PromptToCartDrawer() {
   const navigate = useNavigate();
   const recognitionRef = useRef(null);
   const inputRef = useRef(null);
+  const searchHandlerRef = useRef(null);
 
   // Listen to open events from Navbar or anywhere in the app
   useEffect(() => {
@@ -63,14 +64,14 @@ function PromptToCartDrawer() {
         const transcript = event.results[0][0].transcript;
         setPrompt(transcript);
         setIsListening(false);
-        executeSearch(transcript);
+        searchHandlerRef.current?.(transcript);
       };
 
       recognition.onerror = (event) => {
         console.warn('Speech recognition error:', event.error);
         setIsListening(false);
         if (event.error === 'not-allowed') {
-          toast.warn('Microphone access denied. Please type your query.');
+          toast.warn('Microphone access denied. Please allow microphone access or type your query.');
         }
       };
 
@@ -109,7 +110,7 @@ function PromptToCartDrawer() {
 
     try {
       const data = await promptSearchWithAi(textToSearch);
-      setResults(data);
+      setResults(data?.data || data);
     } catch (err) {
       const msg = err?.response?.data?.message || err.message || 'Failed to search';
       setError(msg);
@@ -118,6 +119,8 @@ function PromptToCartDrawer() {
       setLoading(false);
     }
   };
+
+  searchHandlerRef.current = executeSearch;
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
@@ -166,14 +169,14 @@ function PromptToCartDrawer() {
           setIsOpen(true);
           setTimeout(() => inputRef.current?.focus(), 250);
         }}
-        className="hidden fixed right-0 top-1/2 -translate-y-1/2 z-40 bg-gradient-to-b from-indigo-600 via-purple-600 to-indigo-700 text-white py-4 px-2.5 rounded-l-2xl shadow-2xl shadow-indigo-500/30 hover:px-3.5 transition-all duration-300 flex flex-col items-center gap-2 group cursor-pointer border-l-2 border-y-2 border-white/20"
+        className="fixed right-0 top-1/2 -translate-y-1/2 z-40 bg-gradient-to-b from-indigo-600 via-purple-600 to-indigo-700 text-white py-4 px-2.5 rounded-l-2xl shadow-2xl shadow-indigo-500/30 hover:px-3.5 transition-all duration-300 flex flex-col items-center gap-2 group cursor-pointer border-l-2 border-y-2 border-white/20"
         title="Open AI Prompt & Voice Search"
         aria-label="Open AI Prompt & Voice Search"
       >
         <span className="text-xl group-hover:scale-125 transition-transform animate-pulse">🎙️</span>
         <span className="text-[11px] font-black tracking-widest uppercase [writing-mode:vertical-lr] rotate-180 flex items-center gap-1.5">
-          {/* <span>AI Search</span> */}
-          {/* <span className="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> */}
+          <span>AI Search</span>
+          <span className="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
         </span>
       </button>
 
@@ -202,8 +205,8 @@ function PromptToCartDrawer() {
                 <h2 className="text-base sm:text-lg font-black text-slate-900 tracking-tight">
                   Prompt-to-Cart AI
                 </h2>
-                <span className="px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-indigo-50 text-indigo-700 border border-indigo-200">
-                  Groq LLM
+                <span className="px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-emerald-50 text-emerald-700 border border-emerald-200">
+                  ShopVerse AI
                 </span>
               </div>
               <p className="text-xs text-slate-600">
@@ -327,7 +330,7 @@ function PromptToCartDrawer() {
                 <div className="absolute -inset-1 rounded-3xl bg-indigo-500/20 blur-md animate-ping"></div>
               </div>
               <h3 className="text-base font-bold text-slate-800">
-                Groq AI is analyzing our inventory...
+                ShopVerse AI is matching store inventory...
               </h3>
               <p className="text-xs text-slate-600 max-w-xs mt-1">
                 Parsing your hardware specs, matching RAM, CPU, budget, and ranking the best options.
@@ -520,7 +523,7 @@ function PromptToCartDrawer() {
 
         {/* Drawer Footer */}
         <div className="bg-white border-t border-slate-200 px-6 py-3 flex items-center justify-between text-xs text-slate-600">
-          <span>Powered by Groq Cloud Llama-3.3</span>
+          <span>ShopVerse Neural Search Core</span>
           <span className="text-[10px] bg-slate-100 px-2 py-0.5 rounded font-mono font-bold">
             ESC to close
           </span>

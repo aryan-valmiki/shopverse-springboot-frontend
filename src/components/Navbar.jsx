@@ -72,7 +72,7 @@ function Navbar() {
                 <span>Compare</span>
               </Link>
 
-              {/* AI Advisor Link (Original Form Based) */}
+              {/* AI Advisor Link */}
               <Link
                 to="/ai-recommend"
                 className={`group relative inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-sm font-bold transition-all shadow-sm ${
@@ -82,21 +82,21 @@ function Navbar() {
                 }`}
               >
                 <span className="text-base group-hover:rotate-12 transition-transform">✨</span>
-                <span>AI Advisor</span>
-                <span className="hidden xl:inline-block px-1.5 py-0.5 text-[10px] uppercase font-bold tracking-wider rounded-md bg-indigo-600 text-white">
-                  Groq
+                <span>AI Finder</span>
+                <span className="hidden xl:inline-block px-1.5 py-0.5 text-[10px] uppercase font-bold tracking-wider rounded-md bg-gradient-to-r from-indigo-600 to-purple-600 text-white">
+                  Smart AI
                 </span>
               </Link>
 
-              {/* Prompt Search Side Window Trigger Button */}
+              {/* Prompt-to-Cart Quick Drawer Button */}
               <button
                 type="button"
                 onClick={openPromptSearch}
-                className="hidden inline-flex items-center gap-1.5 px-3 py-2 rounded-xl text-sm font-semibold text-purple-700 hover:bg-purple-50 transition cursor-pointer border border-purple-100"
+                className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-sm font-semibold text-purple-700 bg-purple-50 hover:bg-purple-100 transition cursor-pointer border border-purple-200 shadow-xs"
                 title="Search with Voice or Plain English Prompt"
               >
-                {/* <span className="animate-pulse">🎙️</span> */}
-                {/* <span>Prompt Search</span> */}
+                <span className="animate-pulse">🎙️</span>
+                <span>Prompt-to-Cart</span>
               </button>
             </nav>
           </div>

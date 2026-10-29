@@ -64,7 +64,7 @@ function Footer() {
           <div className="flex items-center gap-3 text-xs text-slate-400">
             <span className="inline-flex items-center gap-1.5 bg-slate-900 border border-slate-800 px-3 py-1.5 rounded-full">
               <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-              Groq AI Llama 3.3 Active
+              ShopVerse AI Core Active
             </span>
           </div>
         </div>
@@ -94,7 +94,7 @@ function Footer() {
           <ul className="space-y-2.5 text-xs text-slate-400">
             <li>Full Stack E-Commerce</li>
             <li>Spring Boot 3 + React 19</li>
-            <li>Groq AI Integration</li>
+            <li>Prompt-to-Cart AI Engine</li>
             <li>MySQL Database Engine</li>
           </ul>
         </div>

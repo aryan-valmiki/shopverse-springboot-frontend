@@ -113,11 +113,11 @@ function Compare() {
       <div className="relative overflow-hidden bg-gradient-to-r from-slate-950 via-indigo-950 to-slate-900 text-white rounded-3xl p-8 sm:p-12 shadow-xl shadow-indigo-950/20 border border-slate-800 flex flex-col md:flex-row justify-between items-center gap-6">
         <div className="space-y-3 text-center md:text-left">
           <div className="inline-flex items-center gap-2 bg-indigo-500/20 border border-indigo-400/30 px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider text-indigo-300">
-            <span>⚔️ AI Versus Engine</span>
-            <span>• Groq Llama 3.3</span>
+            <span>⚔️ Tech Battle Engine</span>
+            <span>• ShopVerse Intelligence</span>
           </div>
           <h1 className="text-3xl sm:text-5xl font-black tracking-tight leading-tight">
-            Side-by-Side Product Comparison
+            Side-by-Side Product Battle
           </h1>
           <p className="text-slate-300 text-sm sm:text-base max-w-2xl leading-relaxed">
             Select any two machines from our store inventory. Our AI will analyze the hardware differences and deliver a definitive buying verdict.

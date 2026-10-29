@@ -122,8 +122,8 @@ function Home() {
         <div className="max-w-7xl mx-auto relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           <div className="lg:col-span-7 space-y-6">
             <div className="inline-flex items-center gap-2 bg-indigo-500/10 border border-indigo-500/30 px-3.5 py-1.5 rounded-full text-xs font-bold text-indigo-300 uppercase tracking-widest">
-              <span className="w-2 h-2 rounded-full bg-indigo-400 animate-pulse"></span>
-              Powered by Groq AI & Llama 3.3
+              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+              ShopVerse Neural Engine • Instant Match
             </div>
 
             <h1 className="text-4xl sm:text-6xl font-black tracking-tight leading-[1.1]">
@@ -142,15 +142,15 @@ function Home() {
                 onClick={() => navigate('/ai-recommend')}
                 className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-2xl bg-gradient-to-r from-indigo-600 to-blue-600 hover:from-indigo-500 hover:to-blue-500 text-white font-bold text-sm sm:text-base transition shadow-lg shadow-indigo-600/30 cursor-pointer"
               >
-                <span>✨ Ask AI Hardware Advisor</span>
+                <span>✨ Launch AI Spec Advisor</span>
                 <span>➔</span>
               </button>
 
               <button
                 onClick={() => window.dispatchEvent(new CustomEvent('open-ai-prompt-search'))}
-                className="hidden inline-flex items-center gap-2 px-5 py-3.5 rounded-2xl bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white font-bold text-sm sm:text-base transition shadow-lg shadow-purple-600/30 cursor-pointer"
+                className="inline-flex items-center gap-2 px-5 py-3.5 rounded-2xl bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white font-bold text-sm sm:text-base transition shadow-lg shadow-purple-600/30 cursor-pointer"
               >
-                {/* <span>🎙️ Voice / Prompt Search</span> */}
+                <span>🎙️ Prompt-to-Cart Search</span>
               </button>
 
               <a
@@ -168,7 +168,7 @@ function Home() {
               </div>
               <div>
                 <p className="text-2xl font-black text-indigo-400">&lt; 1s</p>
-                <p className="text-xs text-slate-400 font-medium">Groq Inference</p>
+                <p className="text-xs text-slate-400 font-medium">Neural Speed</p>
               </div>
               <div>
                 <p className="text-2xl font-black text-emerald-400">0%</p>
@@ -186,13 +186,13 @@ function Home() {
                     <span className="w-3 h-3 rounded-full bg-amber-500 inline-block"></span>
                     <span className="w-3 h-3 rounded-full bg-emerald-500 inline-block"></span>
                   </div>
-                  <span className="text-xs text-slate-400 font-mono">ai_advisor.groq</span>
+                  <span className="text-xs text-slate-400 font-mono">shopverse.neural_core</span>
                 </div>
 
                 <div className="bg-slate-950/80 rounded-2xl p-4 text-xs font-mono text-slate-300 space-y-2 border border-slate-800/80">
                   <p className="text-indigo-400">&gt; User query:</p>
                   <p className="text-slate-100">"Need 16GB RAM laptop with Intel i7 under ₹1,20,000 for coding."</p>
-                  <p className="text-emerald-400 pt-2">&gt; AI Recommendation [Groq 70B]:</p>
+                  <p className="text-emerald-400 pt-2">&gt; ShopVerse AI Verdict:</p>
                   <p className="text-slate-200">
                     "Matched <span className="text-indigo-300 font-bold">Dell XPS 15</span> (96% Match) — 16GB DDR5, i7 13th Gen, within your budget."
                   </p>
@@ -276,11 +276,11 @@ function Home() {
             {/* Voice & Prompt Search Trigger Button */}
             <button
               onClick={() => window.dispatchEvent(new CustomEvent('open-ai-prompt-search'))}
-              className="hidden px-3.5 py-2.5 rounded-2xl bg-gradient-to-r from-purple-50 to-indigo-50 border border-purple-200 text-purple-700 hover:from-purple-100 hover:to-indigo-100 font-bold text-xs flex items-center justify-center gap-1.5 shadow-xs transition cursor-pointer"
-              title="Open AI Prompt & Voice Search Drawer"
+              className="px-3.5 py-2.5 rounded-2xl bg-gradient-to-r from-purple-50 to-indigo-50 border border-purple-200 text-purple-700 hover:from-purple-100 hover:to-indigo-100 font-bold text-xs flex items-center justify-center gap-1.5 shadow-xs transition cursor-pointer"
+              title="Open AI Prompt-to-Cart Search Drawer"
             >
-              {/* <span className="text-sm">🎙️</span> */}
-              {/* <span className="hidden sm:inline">AI Prompt</span> */}
+              <span className="text-sm">🎙️</span>
+              <span className="hidden sm:inline">Prompt-to-Cart</span>
             </button>
           </div>
         </div>
