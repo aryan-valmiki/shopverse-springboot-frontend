@@ -18,7 +18,6 @@ const createProduct = async (data) => {
     }
 }
 
-
 const deleteProduct = async (id) => {
     try {
         const response = await axiosInstance.delete(`/product/admin/delete/${id}`)
@@ -28,5 +27,22 @@ const deleteProduct = async (id) => {
     }
 }
 
+const updateProductStatus = async (id, status) => {
+    try {
+        const response = await axiosInstance.patch(`/product/admin/${id}/status?status=${status}`)
+        return response;
+    } catch (error) {
+        throw error
+    }
+}
 
-export { getAllOrder, createProduct, deleteProduct }
+const updateOrderStatus = async (id, status) => {
+    try {
+        const response = await axiosInstance.patch(`/order/admin/${id}/status?status=${status}`)
+        return response;
+    } catch (error) {
+        throw error
+    }
+}
+
+export { getAllOrder, createProduct, deleteProduct, updateProductStatus, updateOrderStatus }

@@ -11,6 +11,8 @@ import Login from './pages/Login.jsx'
 import Register from './pages/Register.jsx'
 import Cart from './pages/Cart.jsx'
 import Orders from './pages/Orders.jsx'
+import AiRecommend from './pages/AiRecommend.jsx'
+import Compare from './pages/Compare.jsx'
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import ProtectedLayout from './layouts/ProtectedLayout.jsx'
@@ -33,6 +35,14 @@ const router = createBrowserRouter([
       {
         path: "register",
         element: <Register />
+      },
+      {
+        path: "ai-recommend",
+        element: <AiRecommend />
+      },
+      {
+        path: "compare",
+        element: <Compare />
       },
       {
         path: "/product/:id",
